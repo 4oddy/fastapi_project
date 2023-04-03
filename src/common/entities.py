@@ -1,0 +1,3 @@
+class Entity:
+    """Base class for all entities"""
+    ...
