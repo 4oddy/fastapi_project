@@ -1,6 +1,6 @@
-from abc import ABC
+from pydantic import BaseModel
 
 
-class Query(ABC):
+class Query(BaseModel):
     """Base class for all queries"""
     ...

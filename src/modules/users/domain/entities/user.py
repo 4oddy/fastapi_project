@@ -6,7 +6,7 @@ from common.entities import Entity
 
 @dataclass
 class User(Entity):
-    id: int
+    id: str
     username: str
     first_name: Optional[str]
     last_name: Optional[str]

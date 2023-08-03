@@ -1,13 +1,12 @@
 from dataclasses import dataclass
-
 from common.entities import Entity
 
-from .user import User
+from modules.users.domain.entities.user import User
 
 
 @dataclass
 class Wish(Entity):
-    id: int
+    id: str
     title: str
     description: str
     owner: User

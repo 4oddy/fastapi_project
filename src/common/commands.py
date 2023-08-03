@@ -1,6 +1,6 @@
-from abc import ABC
+from pydantic import BaseModel
 
 
-class Command(ABC):
+class Command(BaseModel):
     """Base class for all commands"""
     ...
