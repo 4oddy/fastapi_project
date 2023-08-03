@@ -1,14 +1,13 @@
 from common.use_case import UseCase
 
 from .dto import CreateWishCommand
-from .interfaces import DbGateway
 from ...domain.services.wish import WishService
 
 
 class CreateWishUseCase(UseCase[CreateWishCommand, str]):
     def __init__(
             self,
-            db_gateway: DbGateway,
+            db_gateway: ...,
             wish_service: WishService
     ):
         self.db_gateway = db_gateway

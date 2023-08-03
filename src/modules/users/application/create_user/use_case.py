@@ -1,14 +1,13 @@
 from common.use_case import UseCase
 
 from .dto import CreateUserCommand
-from .interfaces import DbGateway
 from ...domain.services.user import UserService
 
 
 class CreateUserUseCase(UseCase[CreateUserCommand, str]):
     def __init__(
             self,
-            db_gateway: DbGateway,
+            db_gateway: ...,
             user_service: UserService
     ):
         self.db_gateway = db_gateway

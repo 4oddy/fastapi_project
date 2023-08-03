@@ -1,7 +1,6 @@
 from common.use_case import UseCase
 
 from .dto import GetWishQuery
-from .interfaces import DbGateway
 from ...domain.entities.wish import Wish
 from ...domain.services.wish import WishService
 
@@ -9,7 +8,7 @@ from ...domain.services.wish import WishService
 class GetWishUseCase(UseCase[GetWishQuery, Wish]):
     def __init__(
             self,
-            db_gateway: DbGateway,
+            db_gateway: ...,
             wish_service: WishService
     ):
         self.db_gateway = db_gateway
