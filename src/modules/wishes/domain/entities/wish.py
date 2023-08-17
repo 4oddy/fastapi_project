@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-from common.entities import Entity
 
+from common.entities import Entity
 from modules.users.domain.entities.user import User
 
 

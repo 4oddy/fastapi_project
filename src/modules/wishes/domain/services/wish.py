@@ -1,7 +1,7 @@
 from common.services import generate_id
+from modules.users.domain.entities.user import User
 
 from ..entities.wish import Wish
-from modules.users.domain.entities.user import User
 
 
 class WishService:

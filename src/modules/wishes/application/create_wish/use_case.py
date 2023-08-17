@@ -1,7 +1,7 @@
 from common.use_case import UseCase
 
-from .dto import CreateWishCommand
 from ...domain.services.wish import WishService
+from .dto import CreateWishCommand
 
 
 class CreateWishUseCase(UseCase[CreateWishCommand, str]):

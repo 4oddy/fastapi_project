@@ -1,7 +1,7 @@
 from common.use_case import UseCase
 
-from .dto import CreateUserCommand
 from ...domain.services.user import UserService
+from .dto import CreateUserCommand
 
 
 class CreateUserUseCase(UseCase[CreateUserCommand, str]):

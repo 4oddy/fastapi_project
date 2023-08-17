@@ -1,5 +1,4 @@
-from typing import TypeVar, Generic
-
+from typing import Generic, TypeVar
 
 InputType = TypeVar('InputType')
 OutputType = TypeVar('OutputType')

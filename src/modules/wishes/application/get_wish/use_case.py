@@ -1,8 +1,8 @@
 from common.use_case import UseCase
 
-from .dto import GetWishQuery
 from ...domain.entities.wish import Wish
 from ...domain.services.wish import WishService
+from .dto import GetWishQuery
 
 
 class GetWishUseCase(UseCase[GetWishQuery, Wish]):
