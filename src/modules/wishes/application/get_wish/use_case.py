@@ -1,4 +1,4 @@
-from common.use_case import UseCase
+from src.common.use_case import UseCase
 
 from ...domain.entities.wish import Wish
 from ...domain.services.wish import WishService

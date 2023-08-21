@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from common.entities import Entity
+from src.common.entities import Entity
 
 
 @dataclass

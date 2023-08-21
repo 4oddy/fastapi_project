@@ -1,17 +1,14 @@
-from common.use_case import UseCase
+from src.common.use_case import UseCase
 
 from ...domain.services.user import UserService
+from ...infrastructure.repositories.user_unit_of_work import UserUnitOfWork
 from .dto import CreateUserCommand
 
 
 class CreateUserUseCase(UseCase[CreateUserCommand, str]):
-    def __init__(
-            self,
-            db_gateway: ...,
-            user_service: UserService
-    ):
-        self.db_gateway = db_gateway
-        self.user_service = user_service
+    def __init__(self, unit_of_work: UserUnitOfWork):
+        self.unit_of_work = unit_of_work
+        self.user_service = UserService()
 
     def __call__(self, data: CreateUserCommand) -> str:
         user = self.user_service.create_user(
@@ -21,7 +18,7 @@ class CreateUserUseCase(UseCase[CreateUserCommand, str]):
             age=data.age
         )
 
-        self.db_gateway.save_user(user)
-        self.db_gateway.commit()
+        self.unit_of_work.repository.create(user)
+        self.unit_of_work.commit()
 
         return user.id

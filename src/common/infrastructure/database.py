@@ -1,13 +1,26 @@
-import datetime
+from typing import Iterator
 
-from sqlalchemy import DateTime
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.sql.schema import Column
+from sqlalchemy import create_engine
+from sqlalchemy.orm import declarative_base, sessionmaker, Session
+
+from ..dependencies import get_settings
 
 Base = declarative_base()
 
+__SETTINGS = get_settings()
 
-class Model(Base):
-    __abstract__ = True
+engine = create_engine(__SETTINGS.db_url)
 
-    created_at = Column(DateTime(), default=datetime.datetime.utcnow())
+SessionLocal = sessionmaker(
+    autoflush=False,
+    bind=engine
+)
+
+
+def get_session() -> Iterator[Session]:
+    session = SessionLocal()
+
+    try:
+        yield session
+    finally:
+        session.close()

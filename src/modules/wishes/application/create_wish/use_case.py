@@ -1,4 +1,4 @@
-from common.use_case import UseCase
+from src.common.use_case import UseCase
 
 from ...domain.services.wish import WishService
 from .dto import CreateWishCommand

@@ -1,4 +1,4 @@
-from common.queries import Query
+from src.common.queries import Query
 
 
 class GetWishQuery(Query):

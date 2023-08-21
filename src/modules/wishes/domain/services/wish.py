@@ -1,5 +1,5 @@
-from common.services import generate_id
-from modules.users.domain.entities.user import User
+from src.common.services import generate_uuid
+from src.modules.users.domain.entities.user import User
 
 from ..entities.wish import Wish
 
@@ -9,7 +9,7 @@ class WishService:
             self, title: str, description: str, owner: User
     ) -> Wish:
         return Wish(
-            id=generate_id(),
+            id=generate_uuid(),
             title=title,
             description=description,
             owner=owner

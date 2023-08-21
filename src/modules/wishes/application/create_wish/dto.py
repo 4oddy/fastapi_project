@@ -1,4 +1,4 @@
-from common.commands import Command
+from src.common.commands import Command
 
 
 class CreateWishCommand(Command):

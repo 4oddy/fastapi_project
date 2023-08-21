@@ -1,6 +1,6 @@
 from typing import Optional
 
-from common.commands import Command
+from src.common.commands import Command
 
 
 class CreateUserCommand(Command):

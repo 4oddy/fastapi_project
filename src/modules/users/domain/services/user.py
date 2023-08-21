@@ -1,4 +1,4 @@
-from common.services import generate_id
+from src.common.services import generate_uuid
 
 from ..entities.user import User
 
@@ -9,7 +9,7 @@ class UserService:
             last_name: str, age: int
     ) -> User:
         return User(
-            id=generate_id(),
+            id=generate_uuid(),
             username=username,
             first_name=first_name,
             last_name=last_name,
