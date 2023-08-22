@@ -18,6 +18,7 @@ class User(Model):
         return UserEntity(
             id=self.id,
             username=self.username,
+            password=self.password,
             first_name=self.first_name,
             last_name=self.last_name,
             age=self.age
@@ -28,6 +29,7 @@ class User(Model):
         return User(
             id=entity.id,
             username=entity.username,
+            password=entity.password,
             first_name=entity.first_name,
             last_name=entity.last_name,
             age=entity.age

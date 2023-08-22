@@ -9,18 +9,20 @@ from src.common.services import generate_uuid
 class User(Entity):
     id: str
     username: str
+    password: str
     first_name: Optional[str]
     last_name: Optional[str]
     age: int
 
     @staticmethod
     def create_user(
-            username: str, first_name: str,
+            username: str, first_name: str, password: str,
             last_name: str, age: int
     ) -> 'User':
         return User(
             id=generate_uuid(),
             username=username,
+            password=password,
             first_name=first_name,
             last_name=last_name,
             age=age

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a4061991-e808-44f9-bd7d-e5a7e43f4c4a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/modules/users/application/find_by_username/dto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/users/application/find_by_username/use_case.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/users/application/services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/users/presentation/routes/find_by_username_route.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/application/create_user/dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/application/create_user/dto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/application/create_user/use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/application/create_user/use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/application/list_users/use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/application/list_users/use_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/dependencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/dependencies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/domain/entities/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/domain/entities/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/domain/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/application/find_by_username/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/domain/services/user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/infrastructure/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/infrastructure/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/infrastructure/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/infrastructure/repositories/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/infrastructure/repositories/user_repository_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/infrastructure/repositories/user_repository_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/presentation/routes/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/presentation/routes/router.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ULCPhNKgDVfl9gm6Tj6xp6IyXy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/roddy/OneDrive/Рабочий стол/projects/fastapi_project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4061991-e808-44f9-bd7d-e5a7e43f4c4a" name="Changes" comment="" />
+      <created>1692709452372</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1692709452372</updated>
+      <workItem from="1692709453844" duration="577000" />
+      <workItem from="1692723626636" duration="50000" />
+      <workItem from="1692735173049" duration="6154000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
