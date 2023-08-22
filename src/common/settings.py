@@ -2,6 +2,6 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    app_name: str = 'Users and their wishes'
+    app_name: str = 'Users'
 
-    db_url: str = 'sqlite:///metanit2.db'
+    db_url: str = 'sqlite:///testdb.db'

@@ -19,11 +19,11 @@ class BaseRepository(Generic[_T]):
     def findall(self) -> Sequence[_T]:
         raise NotImplementedError
 
-    def find_by_id(self, id_: int) -> _T | None:
+    def find_by_id(self, id_: str) -> _T | None:
         raise NotImplementedError
 
     def update(self, entity: _T) -> _T:
         raise NotImplementedError
 
-    def delete_by_id(self, id_: int) -> _T:
+    def delete_by_id(self, id_: str) -> _T:
         raise NotImplementedError

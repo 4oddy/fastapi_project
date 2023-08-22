@@ -19,7 +19,7 @@ class UserRepositoryImpl(UserRepository):
             user.to_entity() for user in users
         ]
 
-    def find_by_id(self, id_: int) -> User | None:
+    def find_by_id(self, id_: str) -> User | None:
         user = self.session.get(UserModel, id_)
 
         if user is None:
@@ -30,5 +30,5 @@ class UserRepositoryImpl(UserRepository):
     def update(self, entity: User) -> User:
         ...
 
-    def delete_by_id(self, id_: int) -> User:
+    def delete_by_id(self, id_: str) -> User:
         ...

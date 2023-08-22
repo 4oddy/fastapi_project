@@ -1,5 +1,4 @@
 from sqlalchemy import Integer, String
-from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import Column
 
 from src.common.infrastructure.base_model import Model
@@ -14,7 +13,6 @@ class User(Model):
     first_name = Column(String(255), nullable=True)
     last_name = Column(String(255), nullable=True)
     age = Column(Integer())
-    wishes = relationship('Wish', back_populates='owner')
 
     def to_entity(self) -> UserEntity:
         return UserEntity(
