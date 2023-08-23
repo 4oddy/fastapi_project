@@ -1,3 +1,4 @@
+import copy
 from dataclasses import dataclass
 from typing import Optional
 
@@ -6,13 +7,22 @@ from src.common.services import generate_uuid
 
 
 @dataclass
-class User(Entity):
+class UserBaseAttrsMixin:
     id: str
     username: str
-    password: str
     first_name: Optional[str]
     last_name: Optional[str]
     age: int
+
+
+@dataclass
+class UserReadModel(UserBaseAttrsMixin):
+    ...
+
+
+@dataclass
+class User(Entity, UserBaseAttrsMixin):
+    password: str
 
     @staticmethod
     def create_user(
@@ -27,3 +37,8 @@ class User(Entity):
             last_name=last_name,
             age=age
         )
+
+    def to_read_model(self) -> UserReadModel:
+        user_prototype = copy.deepcopy(self)
+        user_prototype.__dict__.pop('password')
+        return UserReadModel(**user_prototype.__dict__)

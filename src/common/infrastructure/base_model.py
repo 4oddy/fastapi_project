@@ -1,10 +1,10 @@
 import datetime
 
-from sqlalchemy import Column, String, DateTime
+from sqlalchemy import Column, DateTime, String
 
-from .database import Base
-from ..services import generate_uuid
 from ..entities import Entity
+from ..services import generate_uuid
+from .database import Base
 
 
 class Model(Base):

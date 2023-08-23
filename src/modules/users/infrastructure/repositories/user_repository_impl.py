@@ -1,10 +1,10 @@
 from typing import Sequence
 
-from sqlalchemy import select, delete
+from sqlalchemy import delete, select, update
 
-from .user_repository import UserRepository
-from ..models import User as UserModel
 from ...domain.entities.user import User
+from ..models import User as UserModel
+from .user_repository import UserRepository
 
 
 class UserRepositoryImpl(UserRepository):
@@ -33,7 +33,35 @@ class UserRepositoryImpl(UserRepository):
         return user.to_entity()
 
     def update(self, entity: User) -> User:
-        ...
+        user = UserModel.from_entity(entity)
 
-    def delete_by_id(self, id_: str) -> User:
-        ...
+        values_dict = entity.to_read_model().__dict__
+
+        # remove empty items
+        values_dict = {
+            key: value for key, value in values_dict.items() if value
+        }
+
+        statement = update(
+            UserModel
+        ).filter_by(
+            id=user.id
+        ).values(
+            values_dict
+        ).returning(
+            UserModel
+        )
+
+        mapping = self.session.execute(statement).mappings().one()
+        return mapping['User'].to_entity()
+
+    def delete_by_id(self, id_: str) -> str:
+        statement = delete(
+            UserModel
+        ).filter_by(
+            id=id_
+        ).returning(
+            *UserModel.__table__.columns
+        )
+        self.session.execute(statement)
+        return id_

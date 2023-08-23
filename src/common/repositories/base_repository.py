@@ -1,4 +1,4 @@
-from typing import Generic, TypeVar, Sequence
+from typing import Generic, Sequence, TypeVar
 
 from sqlalchemy.orm import Session
 
@@ -25,5 +25,5 @@ class BaseRepository(Generic[_T]):
     def update(self, entity: _T) -> _T:
         raise NotImplementedError
 
-    def delete_by_id(self, id_: str) -> _T:
+    def delete_by_id(self, id_: str) -> str:
         raise NotImplementedError

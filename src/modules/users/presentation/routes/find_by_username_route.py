@@ -1,10 +1,8 @@
 from fastapi import Depends
 
-from . import router
-
-from ...dependencies import get_find_by_username_use_case
-
 from ...application.find_by_username.dto import FindByUsernameQuery
+from ...dependencies import get_find_by_username_use_case
+from . import router
 
 
 @router.get('/{username}')

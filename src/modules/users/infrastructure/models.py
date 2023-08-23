@@ -2,6 +2,7 @@ from sqlalchemy import Integer, String
 from sqlalchemy.sql.schema import Column
 
 from src.common.infrastructure.base_model import Model
+
 from ..domain.entities.user import User as UserEntity
 
 

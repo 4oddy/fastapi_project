@@ -2,9 +2,8 @@ from src.common.use_case import UseCase
 
 from ...domain.entities.user import User
 from ...infrastructure.repositories.user_unit_of_work import UserUnitOfWork
-from .dto import CreateUserCommand
-
 from ..services import get_hashed_password
+from .dto import CreateUserCommand
 
 
 class CreateUserUseCase(UseCase[CreateUserCommand, str]):

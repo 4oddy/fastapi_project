@@ -1,10 +1,9 @@
 from fastapi import Depends
 
-from . import router
-
 from ...application.create_user.dto import CreateUserCommand
 from ...application.create_user.use_case import CreateUserUseCase
 from ...dependencies import get_create_user_use_case
+from . import router
 
 
 @router.post('/')
