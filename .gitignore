@@ -130,3 +130,7 @@ dmypy.json
 
 # pycharm stuff
 .idea/
+
+# other
+testdb.db
+test.db
