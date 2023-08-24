@@ -1,10 +1,9 @@
 from src.common.use_case import UseCase
 
 from ...domain.entities.user import UserReadModel
+from ...exceptions.user_errors import UserDoesNotExistError
 from ...infrastructure.repositories.user_repository import UserRepository
 from .dto import FindByUsernameQuery
-
-from ...exceptions.user_errors import UserDoesNotExistError
 
 
 class FindByUsernameUseCase(UseCase[FindByUsernameQuery, UserReadModel]):

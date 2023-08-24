@@ -1,10 +1,10 @@
 from src.common.use_case import UseCase
 
 from ...domain.entities.user import User, UserReadModel
+from ...exceptions.user_errors import (UserAlreadyExistsError,
+                                       UserDoesNotExistError)
 from ...infrastructure.repositories.user_unit_of_work import UserUnitOfWork
 from .dto import UpdateUserCommand
-
-from ...exceptions.user_errors import UserDoesNotExistError
 
 
 class UpdateUserUseCase(UseCase[tuple[str, UpdateUserCommand], UserReadModel]):
@@ -28,6 +28,10 @@ class UpdateUserUseCase(UseCase[tuple[str, UpdateUserCommand], UserReadModel]):
             password=''
         )
 
-        user = self.unit_of_work.repository.update(user)
-        self.unit_of_work.commit()
+        try:
+            user = self.unit_of_work.repository.update(user)
+            self.unit_of_work.commit()
+        except:
+            raise UserAlreadyExistsError()
+
         return user.to_read_model()
