@@ -3,7 +3,7 @@ from src.common.use_case import UseCase
 from ...domain.entities.user import User
 from ...exceptions.user_errors import UserAlreadyExistsError
 from ...infrastructure.repositories.user_unit_of_work import UserUnitOfWork
-from ..services import get_hashed_password
+from src.modules.authentication.services.password import get_hashed_password
 from .dto import CreateUserCommand
 
 
