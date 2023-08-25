@@ -12,6 +12,6 @@ class ListUsersUseCase(UseCase[None, Sequence[UserReadModel]]):
 
 
 class ListUsersUseCaseImpl(ListUsersUseCase):
-    def __call__(self) -> Sequence[UserReadModel]:
+    def __call__(self, data: None = None) -> Sequence[UserReadModel]:
         users = self.repo.findall()
         return list(map(lambda user: user.to_read_model(), users))
