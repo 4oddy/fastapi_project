@@ -1,9 +1,9 @@
 from src.common.use_case import UseCase
+from src.modules.authentication.services.password import get_hashed_password
 
 from ...domain.entities.user import User
 from ...exceptions.user_errors import UserAlreadyExistsError
 from ...infrastructure.repositories.user_unit_of_work import UserUnitOfWork
-from src.modules.authentication.services.password import get_hashed_password
 from .dto import CreateUserCommand
 
 
@@ -11,6 +11,8 @@ class CreateUserUseCase(UseCase[CreateUserCommand, str]):
     def __init__(self, unit_of_work: UserUnitOfWork):
         self.unit_of_work = unit_of_work
 
+
+class CreateUserUseCaseImpl(CreateUserUseCase):
     def __call__(self, data: CreateUserCommand) -> str:
         existing_user = self.unit_of_work.repository.find_by_username(data.username)
 

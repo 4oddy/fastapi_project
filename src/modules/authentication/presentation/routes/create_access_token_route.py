@@ -1,11 +1,11 @@
 from fastapi import Depends
 from fastapi.security import OAuth2PasswordBearer
 
-from . import router
-
-from ...dependencies import get_authentication_service, AuthenticationService
 from ...application.create_access_token.dto import CreateAccessTokenCommand
-
+from ...application.create_access_token.use_case import \
+    CreateAccessTokenUseCase
+from ...dependencies_stubs import get_create_access_token_use_case_stub
+from . import router
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 
@@ -13,10 +13,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 @router.post('/')
 def create_access_token(
     data: CreateAccessTokenCommand,
-    auth_service: AuthenticationService = Depends(get_authentication_service)
+    use_case: CreateAccessTokenUseCase = Depends(get_create_access_token_use_case_stub)
 ):
-    user = auth_service.authenticate_user(data.username, data.password)
-    token = auth_service.create_access_token(
-        {'sub': user.username}
-    )
+    token = use_case(data)
     return {'token': token, 'type': 'bearer'}

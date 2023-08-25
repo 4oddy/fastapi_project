@@ -10,6 +10,8 @@ class FindByUsernameUseCase(UseCase[FindByUsernameQuery, UserReadModel]):
     def __init__(self, repo: UserRepository):
         self.repo = repo
 
+
+class FindByUsernameUseCaseImpl(FindByUsernameUseCase):
     def __call__(self, data: FindByUsernameQuery) -> UserReadModel:
         user = self.repo.find_by_username(data.username)
 

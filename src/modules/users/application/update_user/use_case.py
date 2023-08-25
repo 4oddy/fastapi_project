@@ -11,6 +11,8 @@ class UpdateUserUseCase(UseCase[tuple[str, UpdateUserCommand], UserReadModel]):
     def __init__(self, unit_of_work: UserUnitOfWork):
         self.unit_of_work = unit_of_work
 
+
+class UpdateUserUseCaseImpl(UpdateUserUseCase):
     def __call__(self, data: tuple[str, UpdateUserCommand]) -> UserReadModel:
         user_id, data = data
 

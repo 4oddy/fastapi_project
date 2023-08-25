@@ -1,14 +1,16 @@
 import copy
 from datetime import datetime, timedelta
+
 import jwt
 
 from src.common.dependencies import get_settings
-from src.modules.users.infrastructure.repositories.user_repository import UserRepository
-from src.modules.users.domain.entities.user import User
-from ..exceptions.authentication_errors import (InvalidCredentialsError,
-                                                InvalidAccessTokenError)
-
 from src.modules.authentication.services.password import check_password
+from src.modules.users.domain.entities.user import User
+from src.modules.users.infrastructure.repositories.user_repository import \
+    UserRepository
+
+from ..exceptions.authentication_errors import (InvalidAccessTokenError,
+                                                InvalidCredentialsError)
 
 settings = get_settings()
 
@@ -17,6 +19,21 @@ class AuthenticationService:
     def __init__(self, repo: UserRepository):
         self.repo = repo
 
+    def authenticate_user(self, username: str, plain_password: str) -> User:
+        raise NotImplementedError
+
+    @staticmethod
+    def create_access_token(
+            data: dict,
+            expires_delta: timedelta = settings.expires_delta_access_token,
+    ) -> str:
+        raise NotImplementedError
+
+    def get_user_from_access_token(self, token: str) -> User:
+        raise NotImplementedError
+
+
+class AuthenticationServiceImpl(AuthenticationService):
     def authenticate_user(self, username: str, plain_password: str) -> User:
         user = self.repo.find_by_username(username)
 
@@ -49,10 +66,12 @@ class AuthenticationService:
             algorithms=['HS256']
         )
 
-        username = payload.get('sub')
-        user = self.repo.find_by_username(username)
+        username = payload.get('sub', None)
 
-        if user:
-            return user
+        if username:
+            user = self.repo.find_by_username(username)
+
+            if user:
+                return user
 
         raise InvalidAccessTokenError()

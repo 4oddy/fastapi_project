@@ -8,6 +8,8 @@ class DeleteUserByIdUseCase(UseCase[str, str]):
     def __init__(self, unit_of_work: UserUnitOfWork):
         self.unit_of_work = unit_of_work
 
+
+class DeleteUserByIdUseCaseImpl(DeleteUserByIdUseCase):
     def __call__(self, user_id: str) -> str:
         existing_user = self.unit_of_work.repository.find_by_id(user_id)
 
